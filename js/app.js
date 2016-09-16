@@ -103,7 +103,8 @@ $('.inspiration-getter').submit( function(e){
 		// zero out results if previous search has run
 		$('.results').html('');
 		// get the value of the tags the user submitted
-		var tags = $(this).find("input[name='tags']").val();
+		var tags = $(this).find("input[name='answerers']").val();
+
 		getInspired(tags);
 
 
