@@ -138,7 +138,7 @@ var showInspiredQuestion = function(question) {
 	// set some properties related to asker
 	var asker = result.find('.asker');
 	asker.html('<p>Name: <a target="_blank" '+
-		'href=http://stackoverflow.com/users/' + question.user.user_id + ' >' +
+		'href=https://stackoverflow.com/users/' + question.user.user_id + ' >' +
 		question.user.display_name +
 		'</a></p>' +
 		'<p>Reputation: ' + question.user.reputation + '</p>'
@@ -157,7 +157,7 @@ var getInspired = function(tags) {
 	var tagged = tags
 	
 	$.ajax({
-		url: "http://api.stackexchange.com/2.2/tags/"+tagged+"/top-answerers/all_time?site=stackoverflow",
+		url: "https://api.stackexchange.com/2.2/tags/"+tagged+"/top-answerers/all_time?site=stackoverflow",
 		dataType: "jsonp",//use jsonp to avoid cross origin issues
 		type: "GET",
 	})
