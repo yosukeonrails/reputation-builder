@@ -129,12 +129,28 @@ var showInspiredQuestion = function(question) {
 
 	// score of the user
 	var user_score = result.find('.user-score');
+
 	var score = question.score;
-	user_score.text(score.toString());
+
+	// 
+	user_score.append('Score: '+ score+ '</br>')
 
 	// set the .viewed for question property in result
-	var accept = result.find('.accept');
-	accept.text(question.user.accept_rate);
+
+	if(question.user.accept_rate){
+
+			var accept = result.find('.accept');
+
+	// accept.text(question.user.accept_rate);
+
+	accept.append('Acceptance Rate: '+ question.user.accept_rate+ '</br>')
+
+	} else {
+
+		console.log('no ACCEPTANCE RATE')
+	
+	}
+
 
 	// set some properties related to asker
 	var asker = result.find('.asker');
